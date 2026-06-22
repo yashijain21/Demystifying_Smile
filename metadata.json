@@ -1,0 +1,6 @@
+{
+  "name": "Demystifying Smiles",
+  "description": "Durable full-stack portal of Demystifying Smiles Dental Clinic in Sector 53 Noida, with premium specialties, live appointment scheduler, real-time reviews hub, and custom virtual AI dental advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

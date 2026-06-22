@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-logo-blue-50: #f2f8ff;
+  --color-logo-blue-100: #e4f0ff;
+  --color-logo-blue-200: #b4d7ff;
+  --color-logo-blue-500: #6ca6ea;
+  --color-logo-blue-600: #4f90df;
+  --color-logo-blue-700: #376fb8;
+
+  --color-logo-orange-50: #fff7ef;
+  --color-logo-orange-100: #ffe9d4;
+  --color-logo-orange-200: #ffd5b8;
+  --color-logo-orange-500: #f4a062;
+  --color-logo-orange-600: #e6823d;
+  --color-logo-orange-700: #c7631f;
+
+  --color-logo-auburn-50: #f4f8fc;
+  --color-logo-auburn-100: #dce9f7;
+  --color-logo-auburn-200: #b4d7ff;
+  --color-logo-auburn-500: #314860;
+  --color-logo-auburn-600: #273a4f;
+  --color-logo-auburn-700: #1c2a3a;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#fffaf4] text-slate-800 antialiased;
+  }
+}

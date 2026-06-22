@@ -1,0 +1,26 @@
+[
+  {
+    "id": "apt-1",
+    "name": "Rohan Verma",
+    "phone": "+91 9988776655",
+    "email": "rohan@example.com",
+    "service": "Dental Implants",
+    "date": "2026-06-22",
+    "time": "11:30 AM",
+    "notes": "Checking out if I am eligible for titanium implant",
+    "status": "Confirmed",
+    "createdAt": "2026-06-20T15:54:04.871Z"
+  },
+  {
+    "id": "apt-2",
+    "name": "Pooja Malhotra",
+    "phone": "+91 9812345678",
+    "email": "pooja.m@example.com",
+    "service": "Teeth Whitening",
+    "date": "2026-06-25",
+    "time": "04:30 PM",
+    "notes": "Looking for maximum shade improvement before high-profile family wedding next weekend.",
+    "status": "Pending",
+    "createdAt": "2026-06-20T15:54:04.871Z"
+  }
+]

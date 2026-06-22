@@ -1,0 +1,29 @@
+[
+  {
+    "id": "review-1",
+    "author": "Karan Sharma",
+    "rating": 5,
+    "comment": "Amazing experience with Demystifying Smiles! Visited for root canal and crown. The process was completely painless, very professional, and staff was polite. Highly recommend this clinic in Sector 53, Noida!",
+    "dateStr": "1 week ago",
+    "isVerified": true,
+    "avatarInitials": "KS"
+  },
+  {
+    "id": "review-2",
+    "author": "Naureen Khan",
+    "rating": 5,
+    "comment": "I got my clear aligners from here and the results are amazing. Dr. and team are extremely detail oriented and explained every step of the journey. Clean and hygienic clinic!",
+    "dateStr": "2 weeks ago",
+    "isVerified": true,
+    "avatarInitials": "NK"
+  },
+  {
+    "id": "review-3",
+    "author": "Arunima Nundy",
+    "rating": 5,
+    "comment": "Super smooth extraction and deep cleaning. It's the most trustworthy and hygienic dental clinic in Noida. Very polite staff and no hidden costs.",
+    "dateStr": "1 month ago",
+    "isVerified": true,
+    "avatarInitials": "AN"
+  }
+]
