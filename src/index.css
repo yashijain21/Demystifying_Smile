@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat Fallback", Montserrat, Inter, sans-serif;
+  --font-sans: Montserrat, "Montserrat Fallback", Inter, sans-serif;
   --font-display: "Outfit", sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
