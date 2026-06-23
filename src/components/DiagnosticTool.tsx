@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sparkles, HelpCircle, CheckCircle, ArrowRight, HeartPulse, RefreshCw } from "lucide-react";
+import { HelpCircle, CheckCircle, ArrowRight, HeartPulse, RefreshCw } from "lucide-react";
 
 interface DiagnosticToolProps {
   onSelectRecommendedService: (serviceNameStr: string) => void;
@@ -144,7 +144,7 @@ export default function DiagnosticTool({ onSelectRecommendedService }: Diagnosti
                   
                   {ans3 === "pain-fear" && (
                     <div className="mt-3.5 pt-3 border-t border-slate-700 text-xs text-logo-orange-200/90 font-medium bg-logo-orange-500/5 px-3 py-2 rounded-lg border border-logo-orange-500/10 flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-logo-orange-200 shrink-0" />
+                      <HeartPulse className="w-5 h-5 text-logo-orange-200 shrink-0" />
                       <span>Reassurance: Demystifying Smiles Noida relies on micro-vibration painless anesthesia, keeping your treatment completely pain-free!</span>
                     </div>
                   )}

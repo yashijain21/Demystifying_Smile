@@ -1,13 +1,12 @@
 import React from "react";
-import { ShieldCheck, Award, HeartHandshake, ArrowRight, Star, Sparkles } from "lucide-react";
+import { ShieldCheck, Award, HeartHandshake, ArrowRight } from "lucide-react";
 
 interface HeroProps {
   onBookClick: () => void;
   onServicesClick: () => void;
-  onAiClick: () => void;
 }
 
-export default function Hero({ onBookClick, onServicesClick, onAiClick }: HeroProps) {
+export default function Hero({ onBookClick, onServicesClick }: HeroProps) {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-white via-logo-blue-50 to-logo-orange-50 py-12 md:py-20 lg:py-24">
       {/* Abstract Background Accents */}
@@ -20,7 +19,7 @@ export default function Hero({ onBookClick, onServicesClick, onAiClick }: HeroPr
         <div className="lg:col-span-8 flex flex-col items-start space-y-6 text-left">
           
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-logo-blue-100/70 text-logo-blue-700 text-xs font-bold font-mono tracking-wide border border-logo-blue-200/40">
-            <Sparkles className="w-3.5 h-3.5 text-logo-orange-600 animate-spin" style={{ animationDuration: '4s' }} />
+            <Award className="w-3.5 h-3.5 text-logo-orange-600 animate-spin" style={{ animationDuration: '4s' }} />
             <span>Noida's Premier Advanced Dental Hub</span>
           </div>
 
@@ -66,14 +65,6 @@ export default function Hero({ onBookClick, onServicesClick, onAiClick }: HeroPr
             >
               Our Treatments
             </button>
-            <button
-              onClick={onAiClick}
-              className="bg-slate-900 hover:bg-slate-800 text-logo-orange-200 font-display text-xs font-bold px-4 py-3 sm:py-0 rounded-xl flex items-center justify-center gap-1.5 border border-slate-800 shadow-sm"
-              id="hero-ai-btn"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-logo-blue-500" />
-              <span>Ask AI Dental Advisor</span>
-            </button>
           </div>
 
           {/* Trust rating badge */}
@@ -88,7 +79,11 @@ export default function Hero({ onBookClick, onServicesClick, onAiClick }: HeroPr
             <div className="text-left text-xs text-slate-500">
               <div className="flex items-center gap-0.5 text-logo-orange-500 font-bold">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  <span
+                    key={i}
+                    className="inline-block h-2.5 w-2.5 rounded-full bg-current"
+                    aria-hidden="true"
+                  />
                 ))}
                 <span className="text-slate-800 ml-1 font-mono">4.9/5 Rating</span>
               </div>
@@ -118,7 +113,7 @@ export default function Hero({ onBookClick, onServicesClick, onAiClick }: HeroPr
             {/* Float Element: Smile Design badge */}
             <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-2.5 animate-bounce" style={{ animationDuration: '3s' }}>
               <div className="w-8 h-8 rounded-full bg-logo-orange-50 flex items-center justify-center text-logo-orange-600">
-                <Sparkles className="w-4 h-4" />
+                <Award className="w-4 h-4" />
               </div>
               <div className="text-left">
                 <strong className="block text-[11px] text-slate-900">Advanced Smile Makeover</strong>

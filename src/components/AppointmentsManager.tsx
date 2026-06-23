@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Calendar, Clock, Phone, Sparkles, User, BadgeAlert, BadgeCheck, CheckCircle2, ChevronRight, Ban, RefreshCw, PlusCircle, Trash2 } from "lucide-react";
+import { Calendar, Clock, Phone, User, BadgeAlert, BadgeCheck, CheckCircle2, ChevronRight, Ban, RefreshCw, PlusCircle, Trash2 } from "lucide-react";
 import { Appointment } from "../types";
 import {
   createAppointment,

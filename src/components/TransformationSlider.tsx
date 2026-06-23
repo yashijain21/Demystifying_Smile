@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Sparkles, ArrowLeftRight, ThumbsUp } from "lucide-react";
+import { ArrowLeftRight, ThumbsUp } from "lucide-react";
 
 export default function TransformationSlider() {
   const [sliderPos, setSliderPos] = useState(50);
@@ -100,7 +100,7 @@ export default function TransformationSlider() {
           <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2 font-mono">
             <span>Swipe slider above to discover changes</span>
             <span className="text-logo-blue-200 font-bold flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+              <ThumbsUp className="w-3.5 h-3.5 animate-pulse" />
               {currentHighlight}
             </span>
             <span>Drag progress: {sliderPos}%</span>

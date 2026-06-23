@@ -81,7 +81,7 @@ const activeService =
             <div className="bg-logo-blue-50/50 border border-logo-blue-100 p-5 rounded-3xl text-left space-y-3">
               <strong className="block text-xs text-logo-blue-700 font-bold">Unsure which treatment fits you?</strong>
               <p className="text-[11px] text-slate-600 leading-normal">
-                Use our diagnostic selector tool on the home view or chat with the AI Advisor to receive real-time customized dental guidance.
+                Use our diagnostic selector tool on the home view or book a consultation to receive personalized dental guidance.
               </p>
               <button
                 onClick={onBookClick}

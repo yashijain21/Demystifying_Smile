@@ -1,5 +1,5 @@
 import React from "react";
-import { Users, Cpu, Heart, Shield, Sparkles, Medal } from "lucide-react";
+import { Users, Cpu, Heart, Shield, ShieldCheck, Medal } from "lucide-react";
 
 export default function WhyChooseUs() {
   const points = [
@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
       desc: "Strict adherence to WHO sterilization standards. Our autoclaves and single-use kits guarantee a premium, zero-risk treatment loop."
     },
     {
-      icon: Sparkles,
+      icon: ShieldCheck,
       title: "Comfortable Environment",
       desc: "Anxiety-reducing design elements, plush recliners, soothing ambient audio, and highly empathetic dental assistants."
     },

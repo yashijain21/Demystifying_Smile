@@ -1,13 +1,11 @@
 
-import { ShieldCheck, HeartPulse, Sparkles, Award, Microscope, Users, BadgeCheck } from "lucide-react";
+import { ShieldCheck, HeartPulse, Award, Microscope, Users, BadgeCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import { doctors } from "../data/doctors";
 import Header from "./Header";
 import Footer from "./Footer";
-interface AboutPageProps {
-  onBookClick: () => void;
-}
 
-export default function AboutPage({ onBookClick }: AboutPageProps) {
+export default function AboutPage() {
   const values = [
     {
       icon: ShieldCheck,
@@ -42,11 +40,11 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
         <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8 space-y-6">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-logo-orange-100 text-logo-orange-700 border border-logo-orange-200">
-              <Sparkles className="w-3.5 h-3.5" />
+            <BadgeCheck className="w-3.5 h-3.5" />
               <span>Who We Are</span>
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-logo-auburn-500 leading-tight">
-              git Dentistry with Trust, Quality & Care
+              Dentistry with Trust, Quality & Care
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
               Located in the heart of Sector 53, Noida, our clinic was founded with a singular, resolute philosophy:
@@ -71,78 +69,123 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-8 xl:gap-10">
           {doctors.map((doctor) => {
             const bioParagraphs = doctor.bio
               .trim()
               .split(/\n+/)
               .map((paragraph) => paragraph.trim())
               .filter(Boolean);
-            const bioPreview = bioParagraphs[0] ?? "";
+            const bioPreview = bioParagraphs.slice(0, 2).join(" ");
 
             return (
               <article
                 key={doctor.name}
-                className="group overflow-hidden rounded-[2rem] border border-logo-blue-100 bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-left lg:flex lg:min-h-[260px]"
+                className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)] transition-all duration-300 text-left"
               >
-                <div className="relative lg:w-44 lg:shrink-0">
-                  <div className={`aspect-[4/5] overflow-hidden ${doctor.mediaWrapperClassName ?? "bg-[#f8efe1]"}`}>
-                    <img
-                      src={doctor.image}
-                      alt={doctor.name}
-                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-logo-orange-200 shadow-lg">
-                    <h3 className="font-serif text-lg font-bold text-logo-auburn-500 leading-none">
-                      {doctor.name}
-                    </h3>
-                    <span className="block text-[10px] font-semibold text-logo-blue-600 mt-1 font-mono">
-                      {doctor.designation}
-                    </span>
-                  </div>
-                </div>
+                <div className="h-1.5 bg-gradient-to-r from-logo-blue-500 via-logo-orange-500 to-logo-blue-500"></div>
 
-                <div className="p-4 sm:p-5 lg:flex-1 space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-logo-orange-50 text-logo-orange-700 text-[9px] font-bold uppercase tracking-wider border border-logo-orange-200">
-                      <BadgeCheck className="w-3.5 h-3.5" />
-                      <span>{doctor.experience}</span>
-                    </span>
-                    <span className="inline-flex items-center px-2 py-1 rounded-full bg-logo-blue-50 text-logo-blue-700 text-[9px] font-bold uppercase tracking-wider border border-logo-blue-100">
-                      Compact profile
-                    </span>
-                  </div>
+                <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr]">
+                  <div className="relative bg-[#fbfaf7] p-5 sm:p-6 lg:p-7">
+                    <div className={`overflow-hidden rounded-[1.75rem] aspect-[4/5] shadow-lg ring-1 ring-black/5 ${doctor.mediaWrapperClassName ?? "bg-[#f8efe1]"}`}>
+                      <img
+                        src={doctor.image}
+                        alt={doctor.name}
+                        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-logo-orange-600 font-mono">
-                      Education
-                    </h4>
-                    <ul className="space-y-1.5">
-                      {doctor.education.slice(0, 2).map((item) => (
-                        <li key={item} className="flex gap-2 text-xs text-slate-600 leading-relaxed">
-                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-logo-blue-500 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mt-4 rounded-[1.5rem] border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="inline-flex items-center rounded-full bg-logo-orange-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-logo-orange-700">
+                          {doctor.experience}
+                        </span>
+                        <span className="inline-flex items-center rounded-full bg-logo-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-logo-blue-700">
+                          Clinical Lead
+                        </span>
+                      </div>
+                      <h3 className="mt-4 font-serif text-3xl leading-tight font-bold text-logo-auburn-500">
+                        {doctor.name}
+                      </h3>
+                      <p className="mt-2 text-sm font-semibold text-slate-500">
+                        {doctor.designation}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-logo-orange-600 font-mono">
-                      About
-                    </h4>
-                    <p className="text-xs leading-relaxed text-slate-600">
-                      {bioPreview}
-                    </p>
-                  </div>
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="flex flex-wrap items-center gap-3 pb-5 border-b border-slate-100">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-logo-orange-200 bg-logo-orange-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-logo-orange-700">
+                        <BadgeCheck className="w-3.5 h-3.5" />
+                        Board-Supported
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-logo-blue-100 bg-logo-blue-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-logo-blue-700">
+                        {doctor.education.length} Credentials
+                      </span>
+                    </div>
 
-                  <button
-                    onClick={onBookClick}
-                    className="w-full bg-logo-orange-500 hover:bg-logo-orange-600 text-white font-display text-[10px] font-extrabold px-4 py-2.5 rounded-xl shadow-md transition-all cursor-pointer"
-                  >
-                    Book Consultation
-                  </button>
+                    <div className="grid gap-8 xl:grid-cols-[1.15fr_0.85fr] xl:items-start">
+                      <div className="space-y-6">
+                        <div className="space-y-3">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
+                            Professional Summary
+                          </h4>
+                          <p className="max-w-3xl text-sm sm:text-base leading-8 text-slate-600">
+                            {bioPreview}
+                          </p>
+                        </div>
+
+                        <Link
+                          to="/contact"
+                          className="inline-flex w-full sm:w-auto min-w-[240px] items-center justify-center rounded-xl bg-logo-orange-500 px-6 py-3 text-xs font-extrabold text-white shadow-md transition-colors hover:bg-logo-orange-600"
+                        >
+                          Book Consultation
+                        </Link>
+                      </div>
+
+                      <div className="space-y-6 rounded-[1.5rem] border border-slate-100 bg-slate-50/70 p-5 sm:p-6">
+                        <div className="space-y-3">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
+                            Education
+                          </h4>
+                          <ul className="space-y-4">
+                            {doctor.education.slice(0, 2).map((item) => (
+                              <li key={item} className="flex gap-3 text-sm leading-7 text-slate-600">
+                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-blue-500" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {(doctor.achievements?.length || doctor.memberships?.length) ? (
+                          <div className="space-y-3">
+                            <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
+                              Key Highlights
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {(doctor.achievements?.slice(0, 2) ?? []).map((item) => (
+                                <span
+                                  key={item}
+                                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600"
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                              {(doctor.memberships?.slice(0, 2) ?? []).map((item) => (
+                                <span
+                                  key={item}
+                                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600"
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </article>
             );
@@ -195,13 +238,13 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
               We Never Compromise on Safety, Disinfection, or Materials
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
               Every crown placed in our clinic carries raw materials imported directly from Germany (E-Max / IPS)
               with solid warranty cards ranging from 10 to 25 years. We utilize lead-free shielding in digital X-Rays
               and biological indicators to double-check sterilization states daily.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4 text-[10px] font-mono font-bold text-slate-400">
+            <div className="flex flex-wrap gap-4 pt-4 text-[10px] font-mono font-bold text-slate-300">
               <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">100% LEAD SHEILD SAFETY</span>
               <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">BIOLOGICAL CHECKS ENFORCED</span>
               <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">IPS E-MAX OFFICIAL PARTNER</span>

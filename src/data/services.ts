@@ -1,4 +1,4 @@
-import { Baby, AlignCenterHorizontal, ShieldCheck, Smile, SmilePlus, Sparkles } from "lucide-react";
+import { Baby, AlignCenterHorizontal, ShieldCheck, Smile, SmilePlus, Medal } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface ClinicService {
@@ -64,7 +64,7 @@ export const services: ClinicService[] = [
   {
     title: "Smile Makeover",
     slug: "smile-makeover",
-    icon: Sparkles,
+    icon: Medal,
     shortDescription: "Comprehensive cosmetic treatments for a perfect smile.",
     heroTitle: "Transform Your Smile at Demystifying Smiles",
     heroDescription:

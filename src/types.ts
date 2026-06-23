@@ -31,9 +31,3 @@ export interface Review {
   isVerified: boolean;
   avatarInitials: string;
 }
-
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-  timestamp?: string;
-}

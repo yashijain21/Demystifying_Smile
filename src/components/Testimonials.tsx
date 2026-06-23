@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Star, MessageSquarePlus, MessageCircle, RefreshCw, BadgeCheck, X } from "lucide-react";
+import { MessageSquarePlus, MessageCircle, RefreshCw, BadgeCheck, X } from "lucide-react";
 import { Review } from "../types";
 
 export default function Testimonials() {
@@ -81,7 +81,7 @@ export default function Testimonials() {
               Real Patient Smiles & Google Feedback
             </h2>
             <p className="text-slate-600 text-sm mt-3">
-              We hold a gorgeous 4.9-star average rating in Noida. Read genuine, verified experiences 
+              We hold a gorgeous 4.9/5 average rating in Noida. Read genuine, verified experiences 
               detailed by local residents who have completed their dental therapy here.
             </p>
           </div>
@@ -121,13 +121,14 @@ export default function Testimonials() {
                 id={`patient-review-${rev.id}`}
               >
                 <div>
-                  {/* Google Icon and Rating stars */}
+                  {/* Google Icon and rating dots */}
                   <div className="flex justify-between items-center mb-4">
-                    <div className="flex text-logo-orange-500 gap-0.5">
+                    <div className="flex text-logo-orange-500 gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
+                        <span
                           key={i} 
-                          className={`w-4.5 h-4.5 ${i < rev.rating ? "fill-current" : "text-slate-200"}`} 
+                          className={`inline-block h-2.5 w-2.5 rounded-full ${i < rev.rating ? "bg-current" : "bg-slate-200"}`} 
+                          aria-hidden="true"
                         />
                       ))}
                     </div>
@@ -220,10 +221,10 @@ export default function Testimonials() {
                   />
                 </div>
 
-                {/* Rating selection (Interactive stars) */}
+                {/* Rating selection */}
                 <div>
                   <span className="block text-xs font-bold text-slate-700 mb-1.5">
-                    Select Rating Stars *
+                    Select Rating *
                   </span>
                   <div className="flex items-center gap-1.5">
                     {[1, 2, 3, 4, 5].map((starIdx) => {
@@ -237,10 +238,11 @@ export default function Testimonials() {
                           onMouseEnter={() => setFormHoverRating(starIdx)}
                           onMouseLeave={() => setFormHoverRating(0)}
                           className="p-1 text-slate-300 hover:scale-110 transition-transform cursor-pointer"
-                          aria-label={`Rate ${starIdx} stars`}
+                          aria-label={`Rate ${starIdx} points`}
                         >
-                          <Star 
-                            className={`w-8 h-8 ${active ? "text-logo-orange-500 fill-current" : "text-slate-200"}`} 
+                          <span
+                            className={`inline-block h-4 w-4 rounded-full ${active ? "bg-logo-orange-500" : "bg-slate-200"}`}
+                            aria-hidden="true"
                           />
                         </button>
                       );

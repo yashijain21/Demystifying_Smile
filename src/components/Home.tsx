@@ -10,7 +10,7 @@ import Testimonials from "./Testimonials";
 import ClinicMap from "./ClinicMap";
 import Footer from "./Footer";
 
-import { Calendar, Sparkles } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -22,11 +22,6 @@ export default function Home() {
 
   const handleServicesClick = () => {
     navigate("/#services");
-  };
-
-  const handleAiClick = () => {
-    navigate("/ai-advisor");
-    window.scrollTo(0, 0);
   };
 
   const handleServiceSelect = (slug) => {
@@ -44,8 +39,6 @@ export default function Home() {
         <Hero
           onBookClick={handleBookClick}
           onServicesClick={handleServicesClick}
-          onAiClick={handleAiClick}
-
         />
 
         <About />
@@ -84,13 +77,6 @@ export default function Home() {
                 Book Appointment
               </button>
 
-              <button
-                onClick={handleAiClick}
-                className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-6 py-3 font-semibold text-orange-200 hover:bg-slate-700"
-              >
-                <Sparkles size={18} />
-                AI Dental Advisor
-              </button>
             </div>
           </div>
         </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, HeartPulse, ShieldCheck, Microscope } from "lucide-react";
+import { HeartPulse, ShieldCheck, Microscope } from "lucide-react";
 
 export default function About() {
   const stats = [
