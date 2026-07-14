@@ -77,7 +77,7 @@ export default function Testimonials() {
             <span className="text-logo-blue-700 font-display text-xs font-extrabold uppercase tracking-widest bg-logo-blue-50 px-3 py-1 rounded-full border border-logo-blue-100">
               What Our Patients Say
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mt-3">
+            <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-slate-900 mt-3">
               Real Patient Smiles & Google Feedback
             </h2>
             <p className="text-slate-600 text-sm mt-3">
@@ -113,11 +113,11 @@ export default function Testimonials() {
             <span>Loading reviews from our GMB hub...</span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300">
             {reviews.map((rev) => (
               <div 
                 key={rev.id} 
-                className="bg-white border border-slate-100 p-6.5 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 text-left flex flex-col justify-between"
+                className="min-w-[280px] flex-0 snap-start bg-white border border-slate-100 p-6.5 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 text-left flex flex-col justify-between"
                 id={`patient-review-${rev.id}`}
               >
                 <div>

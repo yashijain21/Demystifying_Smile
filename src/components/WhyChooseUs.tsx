@@ -36,46 +36,41 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white" id="why-us">
+    <section className="py-10 sm:py-14 md:py-24 bg-white" id="why-us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        
-        {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-logo-blue-700 font-display text-xs font-extrabold uppercase tracking-widest bg-logo-blue-50 px-3 py-1 rounded-full border border-logo-blue-100">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14 md:mb-16">
+          <span className="inline-flex rounded-full border border-logo-blue-100 bg-logo-blue-50 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.24em] text-logo-blue-700">
             Why Choose Our Practice
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-3">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-slate-900">
             Elite Dental Standards in Sector 53, Noida
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-4">
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
             We don't cut corners. We are fully committed to crafting healthy mouths and vibrant smiles with the utmost clinical transparency.
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300">
           {points.map((p, idx) => (
-            <div 
+            <div
               key={idx}
-              className="bg-[#fffaf4] border border-slate-100 rounded-2xl p-6.5 hover:bg-white hover:shadow-xl hover:border-logo-blue-100/60 transition-all duration-300 text-left flex flex-col items-start"
+              className="flex min-w-[80%] flex-col items-start rounded-[1.35rem] border border-slate-100 bg-[#fffaf4] p-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:bg-white hover:shadow-[0_16px_34px_rgba(15,23,42,0.08)] hover:border-logo-blue-100/60 snap-start sm:p-6 md:min-w-0"
               id={`choose-card-${idx}`}
             >
-              {/* Icon Container */}
-              <div className="w-12 h-12 rounded-xl bg-logo-blue-50 text-logo-blue-600 flex items-center justify-center mb-5 shrink-0">
-                <p.icon className="w-6 h-6 text-logo-orange-600" />
+              <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-logo-blue-50 text-logo-blue-600">
+                <p.icon className="h-6 w-6 text-logo-orange-600" />
               </div>
 
-              <h3 className="font-display text-lg font-bold text-slate-800 mb-2">
+              <h3 className="mb-2 font-display text-lg font-medium text-slate-800">
                 {p.title}
               </h3>
-              
-              <p className="text-slate-500 text-sm leading-relaxed">
+
+              <p className="text-sm leading-relaxed text-slate-500">
                 {p.desc}
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

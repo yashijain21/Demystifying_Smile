@@ -27,7 +27,7 @@ export default function TransformationSlider() {
           <span className="text-logo-blue-200 font-display text-xs font-extrabold uppercase tracking-widest bg-logo-blue-500/10 px-3 py-1 rounded-full border border-logo-blue-500/20">
             Real Smile Transformations
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mt-3">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white mt-3">
             Interact With Our clinical Magic
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-4">

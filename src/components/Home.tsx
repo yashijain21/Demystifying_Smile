@@ -57,7 +57,7 @@ export default function Home() {
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 md:flex-row">
             <div>
-              <h2 className="text-3xl font-bold">
+              <h2 className="text-3xl font-medium">
                 Ready to Perfect & Protect Your Smile?
               </h2>
 

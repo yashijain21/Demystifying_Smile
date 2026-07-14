@@ -23,7 +23,7 @@ export default function Hero({ onBookClick, onServicesClick }: HeroProps) {
             <span>Noida's Premier Advanced Dental Hub</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-slate-900 leading-[1.1]">
             Transforming <span className="text-logo-blue-600 relative inline-block">Smiles<span className="absolute bottom-1.5 left-0 w-full h-2 bg-logo-orange-100 -z-10"></span></span> <br />
             With Ultimate Confidence
           </h1>
@@ -49,18 +49,18 @@ export default function Hero({ onBookClick, onServicesClick }: HeroProps) {
           </div>
 
           {/* Buttons and call to action triggers */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-3">
+          <div className="flex flex-row flex-wrap gap-4 w-full pt-3">
             <button
               onClick={onBookClick}
-              className="bg-logo-orange-500 hover:bg-logo-orange-600 active:scale-98 text-white font-display text-base font-bold py-4 px-8 rounded-xl shadow-xl shadow-logo-orange-500/20 hover:shadow-logo-orange-500/35 transition-all duration-200 text-center flex items-center justify-center gap-2 group cursor-pointer"
+              className="inline-flex min-w-[140px] max-w-fit items-center justify-center gap-2 bg-logo-orange-500 hover:bg-logo-orange-600 active:scale-98 text-white font-display text-xs sm:text-sm font-semibold py-2 px-4 rounded-xl shadow-xl shadow-logo-orange-500/20 hover:shadow-logo-orange-500/35 transition-all duration-200 text-center cursor-pointer leading-none"
               id="hero-book-btn"
             >
               <span>Book Appointment</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={onServicesClick}
-              className="bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 font-display text-base font-bold py-4 px-8 rounded-xl shadow-sm transition-all text-center cursor-pointer"
+              className="inline-flex min-w-[140px] max-w-fit items-center justify-center bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 font-display text-xs sm:text-sm font-semibold py-2 px-4 rounded-xl shadow-sm transition-all duration-200 text-center cursor-pointer leading-none"
               id="hero-services-btn"
             >
               Our Treatments

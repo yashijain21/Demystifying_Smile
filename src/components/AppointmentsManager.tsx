@@ -7,10 +7,13 @@ import {
   getAppointments,
   updateAppointment,
 } from "../services/api";
-
+import Header from "./Header";
+import Footer from "./Footer";
+import image from "../assets/Appointment.png"; // Local image for appointment hero section
 const timeSlots = ["10:30 AM", "11:30 AM", "12:30 PM", "02:30 PM", "03:30 PM", "04:30 PM", "05:30 PM", "06:30 PM", "07:30 PM"];
 
 const dentalServicesOptions = ["Dental Implants", "Smile Makeover", "Root Canal Treatment", "Teeth Whitening", "Clear Aligners", "Pediatric Dentistry"];
+const appointmentHeroImage = "https://images.unsplash.com/photo-1588776814546-1ca29e6b0f51?auto=format&fit=crop&w=1200&q=80";
 
 interface AppointmentsManagerProps {
   preselectedService: string;
@@ -119,6 +122,8 @@ export default function AppointmentsManager({ preselectedService }: Appointments
   };
 
   return (
+   <>
+   <Header/>
     <section className="py-16 bg-[#fffaf4]" id="appointments-portal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
@@ -180,11 +185,38 @@ export default function AppointmentsManager({ preselectedService }: Appointments
           </div>
         )}
 
-        {/* Two-Column split: left form, right Active Slot tracker board */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          {/* Left Column: Input Form Box */}
-          <div className="lg:col-span-5 bg-white border border-slate-100 p-6 sm:p-8 rounded-3xl shadow-sm text-left">
+        {/* Appointment image and booking form */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr] items-start">
+          {/* Appointment Illustration */}
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-logo-blue-50 via-white to-orange-50 border border-slate-100 shadow-sm">
+            <img
+              src={image}
+              className="w-full h-[320px] sm:h-[380px] lg:h-full object-cover"
+            />
+            <div className="p-6 sm:p-8">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 text-xs font-bold uppercase tracking-[0.22em] text-logo-blue-700 border border-logo-blue-100">
+                <Calendar className="w-4 h-4 text-logo-orange-600" />
+                Appointment Ready
+              </span>
+              <h3 className="font-display text-2xl font-bold text-slate-900 mt-6">Easy booking for your dental care</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                Book your dental appointment instantly with a clear consultation path, quick phone support, and expert care from Noida’s trusted specialists.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl bg-white p-4 border border-slate-100 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Why choose us</p>
+                  <p className="mt-2 text-sm font-bold text-slate-900">Same-day slot support</p>
+                </div>
+                <div className="rounded-3xl bg-white p-4 border border-slate-100 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Confidence</p>
+                  <p className="mt-2 text-sm font-bold text-slate-900">Comfort-first dental care</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Appointment Form Box */}
+          <div className="bg-white border border-slate-100 p-6 sm:p-8 lg:p-7 rounded-3xl shadow-sm text-left">
             <h3 className="font-display text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
               <PlusCircle className="w-5.5 h-5.5 text-logo-orange-600" />
               <span>Book Appointment Slot</span>
@@ -349,198 +381,13 @@ export default function AppointmentsManager({ preselectedService }: Appointments
             </form>
           </div>
 
-          {/* Right Column: Active Slot tracker board */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="bg-slate-900 text-slate-100 rounded-3xl p-6 sm:p-7 border border-slate-850 shadow-md">
-              <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
-                <div>
-                  <h3 className="font-display text-lg font-bold text-white flex items-center gap-2">
-                    <Calendar className="w-5.5 h-5.5 text-logo-orange-200" />
-                    <span>Clinic Slot Tracker & Board</span>
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-1">Live feed of scheduled appointments in Noida</p>
-                </div>
-                <button 
-                  onClick={fetchAppointments} 
-                  className="p-2 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white transition-colors"
-                  title="Reload Active List"
-                >
-                  <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-                </button>
-              </div>
-
-              {loading && appointments.length === 0 ? (
-                <div className="text-center py-12 text-slate-400">
-                  <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-logo-orange-200" />
-                  <span>Downloading scheduler feed...</span>
-                </div>
-              ) : appointments.length === 0 ? (
-                <div className="text-center py-12 text-slate-500">
-                  <span>No active slots on this date. Schedule yours first!</span>
-                </div>
-              ) : (
-                <div className="space-y-4 max-h-[480px] overflow-y-auto pr-1">
-                  {appointments.map((apt) => {
-                    const isConfirmed = apt.status === "Confirmed";
-                    const isRescheduling = reschedulingAptId === apt.id;
-
-                    return (
-                      <div 
-                        key={apt.id}
-                        className="bg-slate-850 rounded-2xl p-4 border border-slate-800 hover:border-slate-700/80 transition-all text-xs"
-                      >
-                        <div className="flex justify-between items-start gap-4">
-                          <div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-bold text-white tracking-tight">{apt.name}</span>
-                              <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-semibold ${
-                                isConfirmed 
-                                  ? "bg-logo-orange-500/10 text-logo-orange-200 border border-logo-orange-500/20"
-                                  : "bg-logo-blue-500/10 text-logo-blue-200 border border-logo-blue-500/20"
-                              }`}>
-                                <span className={`w-1 h-1 rounded-full ${isConfirmed ? "bg-logo-orange-200 animate-pulse" : "bg-logo-blue-200"}`}></span>
-                                {apt.status || "Pending"}
-                              </span>
-                            </div>
-                            
-                            <span className="block text-[#a1a1aa] font-medium mt-1 leading-normal">
-                              Service: <strong className="text-slate-200">{apt.service}</strong>
-                            </span>
-                          </div>
-
-                          <span className="text-[10px] font-mono text-[#a1a1aa]">{apt.phone}</span>
-                        </div>
-
-                        {/* Schedule detail bar */}
-                        <div className="mt-3.5 bg-slate-900 rounded-xl p-3 flex justify-between items-center text-[#d4d4d8] border border-slate-950">
-                          <div className="flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5 text-logo-blue-200" />
-                            <span>{apt.date}</span>
-                          </div>
-                          <div className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-logo-blue-200" />
-                            <span>{apt.time}</span>
-                          </div>
-                        </div>
-
-                        {apt.notes && (
-                          <p className="mt-2 text-left text-[10.5px] italic text-slate-400 leading-normal pl-2 border-l-2 border-slate-700">
-                            Notes: "{apt.notes}"
-                          </p>
-                        )}
-
-                        {/* Interactive Reschedule Block */}
-                        {isRescheduling ? (
-                          <div className="mt-4 p-3 bg-slate-900 rounded-xl border border-logo-blue-500/20 space-y-3.5 animate-in slide-in-from-top-1">
-                            <div>
-                              <span className="block font-bold text-logo-blue-200 mb-1.5 text-[10px] uppercase font-mono">Move Preferred Date & Time Slot:</span>
-                              <div className="grid grid-cols-2 gap-2">
-                                <input
-                                  type="date"
-                                  value={rescheduleDate}
-                                  min={new Date().toISOString().split('T')[0]}
-                                  onChange={(e) => setRescheduleDate(e.target.value)}
-                                  className="bg-slate-850 text-white rounded p-1.5 border border-slate-700 text-xs focus:outline-none"
-                                />
-                                <select
-                                  value={rescheduleTime}
-                                  onChange={(e) => setRescheduleTime(e.target.value)}
-                                  className="bg-slate-850 text-white rounded p-1.5 border border-slate-700 text-xs focus:outline-none font-bold"
-                                >
-                                  {timeSlots.map((slot, sIdx) => (
-                                    <option key={sIdx} value={slot}>{slot}</option>
-                                  ))}
-                                </select>
-                              </div>
-                            </div>
-
-                            <div className="flex gap-2 justify-end">
-                              <button
-                                onClick={() => setReschedulingAptId(null)}
-                                className="text-slate-400 hover:text-white px-3 py-1 font-bold rounded"
-                              >
-                                Cancel
-                              </button>
-                              <button
-                                onClick={() => handleRescheduleSubmit(apt.id!)}
-                                disabled={updatingAptId === apt.id}
-                                className="bg-logo-blue-600 hover:bg-logo-blue-700 text-white px-3 py-1 font-bold rounded flex items-center gap-1"
-                              >
-                                {updatingAptId === apt.id ? <RefreshCw className="w-3 h-3 animate-spin"/> : "Confirm Shift"}
-                              </button>
-                            </div>
-                          </div>
-                        ) : (
-                          /* Standard Controls row */
-                          <div className="mt-3.5 pt-3 border-t border-slate-800/60 flex justify-between items-center">
-                            <span className="text-[10px] text-slate-500 font-mono">ID: {apt.id}</span>
-                            
-                            <div className="flex items-center gap-3">
-                              <button
-                                onClick={() => {
-                                  setReschedulingAptId(apt.id!);
-                                  setRescheduleDate(apt.date);
-                                  setRescheduleTime(apt.time);
-                                }}
-                                className="text-logo-blue-200 hover:text-logo-blue-100 font-bold hover:underline py-1 px-2 focus:outline-none cursor-pointer text-xs"
-                                id={`resched-btn-${apt.id}`}
-                              >
-                                Reschedule Slot
-                              </button>
-                              {aptIdToCancel === apt.id ? (
-                                <div className="flex items-center gap-1.5 bg-rose-500/15 py-1 px-2 rounded-xl border border-rose-500/25">
-                                  <span className="text-slate-300 text-[10px] font-bold">Confirm?</span>
-                                  <button
-                                    onClick={() => handleCancelApt(apt.id!)}
-                                    className="bg-rose-600 hover:bg-rose-700 text-white font-bold text-[10px] py-0.5 px-1.5 rounded-lg cursor-pointer transition-colors"
-                                    id={`cancel-confirm-${apt.id}`}
-                                  >
-                                    Yes
-                                  </button>
-                                  <button
-                                    onClick={() => setAptIdToCancel(null)}
-                                    className="bg-slate-700 hover:bg-slate-600 text-slate-300 font-bold text-[10px] py-0.5 px-1.5 rounded-lg cursor-pointer transition-colors"
-                                    id={`cancel-abandon-${apt.id}`}
-                                  >
-                                    No
-                                  </button>
-                                </div>
-                              ) : (
-                                <button
-                                  onClick={() => setAptIdToCancel(apt.id!)}
-                                  className="text-rose-400 hover:text-rose-500 flex items-center gap-0.5 font-bold hover:underline py-1 px-2 focus:outline-none cursor-pointer text-xs"
-                                  id={`cancel-btn-${apt.id}`}
-                                >
-                                  <Trash2 className="w-3.5 h-3.5" />
-                                  <span>Cancel Slot</span>
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        )}
-
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* Quick GMB call details */}
-            <div className="bg-white border border-slate-100 p-5 rounded-3xl shadow-xs flex items-center gap-4">
-              <div className="w-11 h-11 rounded-2xl bg-logo-blue-50 text-logo-blue-600 flex items-center justify-center shrink-0">
-                <Clock className="w-6 h-6 text-logo-orange-600" />
-              </div>
-              <div>
-                <strong className="block text-sm text-slate-900 font-bold">Your Comfort is Our Premier Benchmark</strong>
-                <span className="block text-xs text-slate-500">Need immediate schedule assistance? Our front desk is live at +91 98910 73008.</span>
-              </div>
-            </div>
-          </div>
+        
 
         </div>
 
       </div>
     </section>
+   <Footer/>
+   </>
   );
 }
