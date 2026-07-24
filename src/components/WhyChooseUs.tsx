@@ -34,10 +34,10 @@ export default function WhyChooseUs() {
             Why Choose Our Practice
           </span>
           <h2 className="mt-3 font-display text-2xl sm:text-3xl font-medium tracking-tight text-slate-900">
-            Elite Dental Standards in Sector 53, Noida
+            Trusted Dental Care in Sector 53, Noida
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
-            We don't cut corners. We are fully committed to crafting healthy mouths and vibrant smiles with the utmost clinical transparency.
+            We combine experienced clinicians, modern technology, and careful sterilization to deliver transparent dental care and healthy smiles.
           </p>
         </div>
 

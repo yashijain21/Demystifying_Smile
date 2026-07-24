@@ -96,7 +96,7 @@ export default function ClinicMap() {
             leading-tight
             "
           >
-            Easy Accessibility in Sector 53, Noida
+            Visit Our Clinic in Sector 53, Noida
           </h2>
 
 
@@ -110,8 +110,7 @@ export default function ClinicMap() {
             leading-relaxed
             "
           >
-            Located in a convenient area with easy access and a comfortable
-            environment for every patient visit.
+            Easy to reach, with reserved parking, lift access, and clear directions for a comfortable patient visit.
           </p>
 
 
