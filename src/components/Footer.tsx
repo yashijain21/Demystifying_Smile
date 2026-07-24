@@ -51,10 +51,6 @@ export default function Footer() {
       path: "/about",
     },
     {
-      label: "Our Services",
-      path: "/services",
-    },
-    {
       label: "Contact Us",
       path: "/contact",
     },
