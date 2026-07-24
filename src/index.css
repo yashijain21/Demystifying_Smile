@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: Montserrat, "Montserrat Fallback", Inter, sans-serif;
-  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Merriweather", Georgia, serif;
+  --font-serif: "Merriweather", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   
   --color-logo-blue-50: #f2f8ff;
@@ -46,7 +46,6 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    font-weight: 200;
   }
 
   input,
@@ -61,4 +60,32 @@
     color: #94a3b8;
     opacity: 1;
   }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  color: #318ECB;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #cbd5e1;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  width: 26px;
+  border-radius: 999px;
+  background: #d3621c;
 }

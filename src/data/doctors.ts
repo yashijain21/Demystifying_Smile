@@ -26,13 +26,13 @@ export const doctors: DoctorProfile[] = [
       "MDS - Conservative Dentistry & Endodontics, Bapuji Dental College, Davangere (2001-2004)",
     ],
     bio: `
-Dr. Nikhil Bahuguna is one of India's leading experts in aesthetic and restorative dentistry. He completed his BDS from Bharati Vidyapeeth Dental College and Hospital, Pune, followed by an MDS in Conservative Dentistry and Endodontics from Bapuji Dental College and Hospital.
+Dr. Nikhil Bahuguna is one of India's leading experts in conservative dentistry and endodontics. He completed his BDS from Bharati Vidyapeeth Dental College and Hospital, Pune, followed by an MDS in Conservative Dentistry and Endodontics from Bapuji Dental College and Hospital.
 
 He served as Professor and Head of the Department of Conservative Dentistry and Endodontics at Kalka Dental College and Hospital, Meerut from 2005 to 2018.
 
-Dr. Bahuguna is a Diplomate of the American Board of Aesthetic Dentistry, Fellow of the International College of Continuing Dental Education, and Fellow of the American Society for Dental Aesthetics.
+Dr. Bahuguna is a senior clinician with extensive experience in root canal treatments and restorative dental care.
 
-He is an accredited member and Board Director of the Indian Academy of Aesthetic and Cosmetic Dentistry and has previously served as its President.
+He has served in senior academic roles and continues to guide patients with evidence-based dental care.
     `,
     achievements: [
       "Diplomate - American Board of Aesthetic Dentistry",

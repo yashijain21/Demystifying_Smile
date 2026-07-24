@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, MessageSquareCode, ShieldCheck, Compass, CheckCircle2 } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
+import contactHero from "../assets/contact-hero.png";
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -62,21 +63,25 @@ export default function ContactPage() {
    <Header />
     <div className="bg-[#fffaf4]" id="contact-us-page">
       
-      {/* Elegantly styled pastel cover banner */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-logo-blue-50 via-white to-logo-orange-50/40 border-b border-logo-blue-100 py-16 px-4 md:py-24 text-left">
-        <div className="absolute top-0 right-10 w-80 h-80 bg-logo-orange-100/20 rounded-full blur-2xl pointer-events-none"></div>
-        <div className="max-w-6xl mx-auto relative z-10 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-logo-blue-100 text-logo-blue-700 border border-logo-blue-200/50">
-            <Compass className="w-4 h-4 text-logo-blue-500" />
-            <span>Noida Clinic Hub</span>
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-logo-auburn-500 tracking-tight leading-tight">
-            Connect with Our Noida Care Desk
-          </h1>
-          <p className="text-slate-600 text-sm max-w-2xl leading-normal">
-            Have query about treatment costs, scheduling, or general clinical capabilities? 
-            Drop us a message below or call us directly. Our specialized assistants are ready to answer your queries instantly.
-          </p>
+      {/* Hero banner */}
+      <section className="relative isolate overflow-hidden border-b border-black/10 text-left">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${contactHero})` }}
+        />
+        <div className="absolute inset-0 bg-black/52" />
+
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24 lg:py-28">
+          <div className="max-w-3xl space-y-4 text-white">
+           
+            <h1 className="max-w-2xl font-serif text-2xl font-bold tracking-tight leading-tight sm:text-3xl lg:text-4xl mt-5">
+              Connect with Our Noida Care Desk
+            </h1>
+            <p className="max-w-2xl text-[13px] leading-relaxed text-white/82 sm:text-sm lg:text-base">
+              Have a question about treatment costs, scheduling, or general clinical capabilities?
+              Drop us a message below or call us directly. Our specialized assistants are ready to answer your queries instantly.
+            </p>
+          </div>
         </div>
       </section>
 

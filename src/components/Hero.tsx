@@ -1,130 +1,415 @@
-import React from "react";
-import { ShieldCheck, Award, HeartHandshake, ArrowRight } from "lucide-react";
+﻿import React from "react";
+
+import {
+  FaTooth,
+  FaUserDoctor,
+  FaRegFaceSmileBeam,
+  FaArrowRight,
+} from "react-icons/fa6";
+
 
 interface HeroProps {
   onBookClick: () => void;
   onServicesClick: () => void;
 }
 
-export default function Hero({ onBookClick, onServicesClick }: HeroProps) {
+
+export default function Hero({
+  onBookClick,
+  onServicesClick,
+}: HeroProps) {
+
+
+  const features = [
+    {
+      icon: FaUserDoctor,
+      title: "Expert Care",
+    },
+    {
+      icon: FaTooth,
+      title: "Gentle Treatment",
+    },
+    {
+      icon: FaRegFaceSmileBeam,
+      title: "Beautiful Smiles",
+    },
+  ];
+
+
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-white via-logo-blue-50 to-logo-orange-50 py-12 md:py-20 lg:py-24">
-      {/* Abstract Background Accents */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-logo-blue-200/30 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-logo-orange-200/25 rounded-full blur-3xl -z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
-        {/* Left Copy Column */}
-        <div className="lg:col-span-8 flex flex-col items-start space-y-6 text-left">
-          
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-logo-blue-100/70 text-logo-blue-700 text-xs font-bold font-mono tracking-wide border border-logo-blue-200/40">
-            <Award className="w-3.5 h-3.5 text-logo-orange-600 animate-spin" style={{ animationDuration: '4s' }} />
-            <span>Noida's Premier Advanced Dental Hub</span>
-          </div>
+    <section
+      className="
+        relative
+        overflow-hidden
+        h-[100vh]
+        bg-slate-950
+        text-white
+        py-16
+        sm:py-20
+        lg:py-24
+      "
+    >
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-slate-900 leading-[1.1]">
-            Transforming <span className="text-logo-blue-600 relative inline-block">Smiles<span className="absolute bottom-1.5 left-0 w-full h-2 bg-logo-orange-100 -z-10"></span></span> <br />
-            With Ultimate Confidence
-          </h1>
+      {/* Background Image */}
 
-          <p className="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed">
-            Experience painless, ultra-modern dental care at Demystifying Smiles in Sector 53, Noida. 
-            From expert dental implants to invisible aligners and complete smile design makeovers, we blend 
-            unmatched scientific expertise with warm, clinical care.
-          </p>
+      <div className="absolute inset-0">
 
-          {/* Quick core values/assurances */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-xl pt-2">
-            {[
-              { icon: ShieldCheck, text: "Strict Global Hygiene Protocols" },
-              { icon: Award, text: "Elite Certified Specialists" },
-              { icon: HeartHandshake, text: "Fully Painless Techniques" }
-            ].map((v, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-xs font-bold text-slate-700 bg-white/70 backdrop-blur-sm p-3 rounded-xl border border-slate-100 flex-1">
-                <v.icon className="w-4 h-4 text-logo-orange-600 shrink-0" />
-                <span>{v.text}</span>
-              </div>
-            ))}
-          </div>
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[url('https://i.pinimg.com/736x/cc/fd/5d/ccfd5d40b9a0859f0d7209e5f7006edb.jpg')]
+            bg-cover
+            bg-center
+            opacity-80
+            h-[100vh]
+          "
+        />
 
-          {/* Buttons and call to action triggers */}
-          <div className="flex flex-row flex-wrap gap-4 w-full pt-3">
-            <button
-              onClick={onBookClick}
-              className="inline-flex min-w-[140px] max-w-fit items-center justify-center gap-2 bg-logo-orange-500 hover:bg-logo-orange-600 active:scale-98 text-white font-display text-xs sm:text-sm font-semibold py-2 px-4 rounded-xl shadow-xl shadow-logo-orange-500/20 hover:shadow-logo-orange-500/35 transition-all duration-200 text-center cursor-pointer leading-none"
-              id="hero-book-btn"
-            >
-              <span>Book Appointment</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={onServicesClick}
-              className="inline-flex min-w-[140px] max-w-fit items-center justify-center bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 font-display text-xs sm:text-sm font-semibold py-2 px-4 rounded-xl shadow-sm transition-all duration-200 text-center cursor-pointer leading-none"
-              id="hero-services-btn"
-            >
-              Our Treatments
-            </button>
-          </div>
 
-          {/* Trust rating badge */}
-          <div className="flex items-center gap-3.5 pt-4">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">
-                  {i === 4 ? "+10k" : `P${i}`}
-                </div>
-              ))}
-            </div>
-            <div className="text-left text-xs text-slate-500">
-              <div className="flex items-center gap-0.5 text-logo-orange-500 font-bold">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className="inline-block h-2.5 w-2.5 rounded-full bg-current"
-                    aria-hidden="true"
-                  />
-                ))}
-                <span className="text-slate-800 ml-1 font-mono">4.9/5 Rating</span>
-              </div>
-              <span>Trusted by 10,000+ happy patient smiles</span>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Right Photo Column */}
-        <div className="lg:col-span-4 relative flex justify-center items-center">
-          <div className="relative w-full max-w-xs sm:max-w-sm">
-            
-            {/* Visual Frame Backing */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-logo-blue-500 to-logo-orange-500 rounded-[2rem] transform rotate-3 scale-98 shadow-2xl -z-10 blur-sm opacity-90"></div>
-            
-            {/* Real Hotlinked Dental Patient Picture */}
-            <div className="overflow-hidden rounded-[2rem] border-4 border-white bg-slate-100 aspect-[3/4] object-cover shadow-xl max-w-full">
-              <img 
-                src="https://img.freepik.com/free-photo/close-up-perfect-smile_1149-1021.jpg?semt=ais_hybrid?w=1200" 
-                alt="Expert caring dentistry at Demystifying Smiles" 
-                className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-
-            {/* Float Element: Smile Design badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-2.5 animate-bounce" style={{ animationDuration: '3s' }}>
-              <div className="w-8 h-8 rounded-full bg-logo-orange-50 flex items-center justify-center text-logo-orange-600">
-                <Award className="w-4 h-4" />
-              </div>
-              <div className="text-left">
-                <strong className="block text-[11px] text-slate-900">Advanced Smile Makeover</strong>
-                <span className="block text-[9px] text-slate-500">100% Customized Aesthetic Planning</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
+        <div
+          className="
+            absolute
+            inset-0
+            bg-black/65
+          "
+        />
 
       </div>
+
+
+
+      {/* Ambient Lights */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-24
+          top-10
+          h-72
+          w-72
+          rounded-full
+          bg-sky-500/20
+          blur-3xl
+        "
+      />
+
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          right-0
+          top-28
+          h-80
+          w-80
+          rounded-full
+          bg-orange-400/25
+          blur-3xl
+        "
+      />
+
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/3
+          h-56
+          w-56
+          -translate-x-1/2
+          rounded-full
+          bg-cyan-400/20
+          blur-3xl
+        "
+      />
+
+
+
+      <div
+        className="
+          relative
+          mx-auto
+          max-w-6xl
+          px-4
+          sm:px-6
+        "
+      >
+
+
+        <div
+          className="
+            grid
+            gap-10
+            lg:grid-cols-[1.2fr_0.8fr]
+            lg:items-center
+          "
+        >
+
+
+          <div className="relative z-10">
+
+
+            <div
+              className="
+                rounded-[2rem]
+                p-5
+                sm:p-10
+              "
+            >
+
+
+              <p
+                className="
+                  text-xs
+                  font-semibold
+                  uppercase
+                  tracking-[0.35em]
+                  text-sky-300/80
+                "
+              >
+                WHERE SCIENCE MEETS COMPASSION
+              </p>
+
+
+
+
+              <h1
+                className="
+                  mt-4
+                  font-semibold
+                  leading-tight
+                  tracking-tight
+                  text-white
+                  text-3xl
+                  sm:text-5xl
+                  lg:text-[2.8rem]
+                "
+              >
+
+                Crafting Confident
+
+                <span className="block">
+
+                  <span className="text-orange-300">
+                    Smiles,
+                  </span>
+
+                  {" "}
+
+                  <span className="text-sky-300">
+                    Naturally.
+                  </span>
+
+                </span>
+
+              </h1>
+
+
+
+
+
+              <p
+                className="
+                  mt-4
+                  max-w-2xl
+                  text-sm
+                  leading-7
+                  text-slate-300
+                  sm:text-base
+                "
+              >
+                Experience advanced dental care with a gentle
+                touch, combining modern technology with
+                personalized treatments for confident smiles.
+              </p>
+
+
+
+
+
+              {/* FEATURES */}
+
+              <div
+                className="
+                  mt-4
+                  flex
+                  w-full
+                  gap-2
+                  sm:gap-3
+                "
+              >
+
+                {features.map((item,index)=>{
+
+                  const Icon = item.icon;
+
+                  return (
+
+                    <div
+                      key={index}
+                      className="
+                        flex-1
+                        min-w-0
+                        rounded-2xl
+                        border
+                        border-white/10
+                        bg-white/10
+                        px-2
+                        py-3
+                        backdrop-blur-md
+                        flex
+                        items-center
+                        justify-center
+                        gap-2
+                      "
+                    >
+
+
+                      <div
+                        className="
+                          flex
+                          h-7
+                          w-7
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-xl
+                          bg-orange-300/20
+                          text-orange-300
+                          sm:h-10
+                          sm:w-10
+                        "
+                      >
+
+                        <Icon
+                          className="
+                            h-4
+                            w-4
+                            sm:h-5
+                            sm:w-5
+                          "
+                        />
+
+                      </div>
+
+
+
+
+                      <p
+                        className="
+                          text-xs
+                          font-semibold
+                          leading-tight
+                          text-slate-100
+                          sm:text-sm
+                        "
+                      >
+                        {item.title}
+                      </p>
+
+
+                    </div>
+
+                  );
+
+                })}
+
+              </div>
+
+
+
+
+
+              {/* CTA BUTTONS */}
+
+              <div
+                className="
+                  mt-8
+                  flex
+                  flex-col
+                  gap-3
+                  sm:flex-row
+                "
+              >
+
+
+                <button
+                  onClick={onBookClick}
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-full
+                    bg-orange-400
+                    px-6
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-slate-950
+                    shadow-xl
+                    shadow-orange-500/20
+                    transition
+                    hover:bg-orange-300
+                  "
+                >
+
+                  Book Appointment
+
+                  <FaArrowRight
+                    className="h-4 w-4"
+                  />
+
+                </button>
+
+
+
+
+                <button
+                  onClick={onServicesClick}
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-sky-300/30
+                    bg-white/10
+                    px-6
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-sky-200
+                    transition
+                    hover:bg-white/20
+                  "
+                >
+
+                  Explore Treatments
+
+                </button>
+
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
     </section>
+
   );
 }

@@ -7,10 +7,12 @@ import ServicesGrid from "./ServicesGrid";
 import WhyChooseUs from "./WhyChooseUs";
 import TransformationSlider from "./TransformationSlider";
 import Testimonials from "./Testimonials";
+import InstagramReels from "./InstagramReels";
 import ClinicMap from "./ClinicMap";
 import Footer from "./Footer";
-
+import GalleryPreview from "./GalleryPreview";
 import { Calendar } from "lucide-react";
+import Gallery from "./Gallery";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -50,6 +52,8 @@ export default function Home() {
       
 
         <Testimonials />
+        <GalleryPreview />
+        <InstagramReels />
 
         {/* CTA */}
         <section className="relative overflow-hidden bg-slate-900 px-6 py-14 text-white">
@@ -57,11 +61,11 @@ export default function Home() {
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 md:flex-row">
             <div>
-              <h2 className="text-3xl font-medium">
+              <h2 className="text-lg font-medium">
                 Ready to Perfect & Protect Your Smile?
               </h2>
 
-              <p className="mt-3 max-w-2xl text-sm text-slate-400">
+              <p className="mt-3 max-w-2xl text-xs md:text-sm text-slate-400">
                 Whether you need invisible aligners, root canal treatment,
                 dental implants, or cosmetic smile designing, our experts are
                 here to help.
@@ -71,7 +75,7 @@ export default function Home() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={handleBookClick}
-                className="flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600"
+                className="flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white text-[0.5rem] md:text-xs hover:bg-orange-600"
               >
                 <Calendar size={18} />
                 Book Appointment

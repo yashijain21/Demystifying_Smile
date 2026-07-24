@@ -1,5 +1,4 @@
-
-import { ShieldCheck, HeartPulse, Award, Microscope, Users, BadgeCheck } from "lucide-react";
+import { ShieldCheck, HeartPulse, Award, Microscope, Users, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { doctors } from "../data/doctors";
 import Header from "./Header";
@@ -30,231 +29,246 @@ export default function AboutPage() {
   ];
 
   return (
-   <>
-   <Header/>
-    <div className="bg-[#fffaf4]" id="about-us-page">
-      <section className="relative overflow-hidden bg-gradient-to-br from-logo-blue-50 via-white to-logo-orange-50 border-b border-logo-blue-100 py-20 px-4 md:py-28 text-left">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-logo-orange-100/30 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 left-10 w-96 h-96 bg-logo-blue-100/20 rounded-full blur-3xl pointer-events-none"></div>
+    <>
+      <Header />
+      <div className="bg-[#fffaf4]" id="about-us-page">
+        <section
+          className="relative overflow-hidden border-b border-black/10 px-4 pt-20 md:pt-28"
+          style={{
+            backgroundImage:
+              "url('https://i-dentist.ca/wp-content/smush-webp/2025/06/dental-crown-vs-filling-1200x800.jpg.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/65 pointer-events-none"></div>
 
-        <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-8 space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-logo-orange-100 text-logo-orange-700 border border-logo-orange-200">
-            <BadgeCheck className="w-3.5 h-3.5" />
-              <span>Who We Are</span>
+          <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-10 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-16">
+            <div className="space-y-5">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[0.55rem] font-bold uppercase tracking-widest text-white backdrop-blur-sm">
+                About Our Practice
+              </span>
+
+              <h1 className="font-serif text-sm sm:text-xl lg:text-[2rem] font-normal tracking-tight text-white leading-[0.95] max-w-2xl">
+                Care that feels calm, clear, and genuinely dental.
+              </h1>
+
+              <p className="max-w-2xl text-xs sm:text-sm leading-6 text-white/85">
+                We keep treatment simple, transparent, and centered on long-term oral health. From routine care to
+                advanced endodontics, every visit is designed to feel comfortable, informed, and patient-first.
+              </p>
+
+              <div className="flex flex-wrap gap-2 pt-1">
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
+                  Root Canal Care
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
+                  Smile Makeovers
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
+                  Family Dentistry
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="rounded-[1.5rem] border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-sm">
+                <p className="text-2xl sm:text-3xl font-normal text-white">20+</p>
+                <p className="mt-1 text-[9px] uppercase tracking-[0.22em] text-white/80 font-bold">Years of Care</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-sm">
+                <p className="text-2xl sm:text-3xl font-normal text-white">BDS</p>
+                <p className="mt-1 text-[9px] uppercase tracking-[0.22em] text-white/80 font-bold">Qualified Team</p>
+              </div>
+              <div className="col-span-2 rounded-[1.5rem] border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-sm">
+                <p className="text-sm sm:text-base leading-6 text-white/85">
+                  Transparent treatment plans, gentle procedures, and a clean clinical experience from start to finish.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-logo-blue-50 text-logo-blue-700 border border-logo-blue-100">
+              <Award className="w-3.5 h-3.5" />
+              <span>Our Doctors</span>
             </span>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-logo-auburn-500 leading-tight">
-              Dentistry with Trust, Quality & Care
-            </h1>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-              Located in the heart of Sector 53, Noida, our clinic was founded with a singular, resolute philosophy:
-              to strip the anxiety, complex medical jargon, and hidden billing out of dentistry, replacing it with
-              crystal-clear transparency and premium treatment comfort.
+            <h2 className="font-serif text-lg sm:text-2xl md:text-4xl font-bold tracking-tight text-logo-auburn-500">
+              Experienced clinicians behind the practice
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Meet the team. Each profile below is driven directly from shared doctor data and local image assets, so updates stay consistent across the site.
             </p>
           </div>
-        </div>
-      </section>
 
-      <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-logo-blue-50 text-logo-blue-700 border border-logo-blue-100">
-            <Award className="w-3.5 h-3.5" />
-            <span>Our Doctors</span>
-          </span>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-logo-auburn-500">
-            Experienced clinicians behind the practice
-          </h2>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Meet the team. Each profile below is driven directly from shared doctor data and local image assets, so updates stay consistent across the site.
-          </p>
-        </div>
+          <div className="space-y-6 md:space-y-8">
+            {doctors.map((doctor, index) => {
+              const bioParagraphs = doctor.bio
+                .trim()
+                .split(/\n+/)
+                .map((paragraph) => paragraph.trim())
+                .filter(Boolean);
+              const bioPreview = bioParagraphs[0] ?? doctor.bio.trim();
+              const isReversed = index % 2 === 1;
+              const firstName = doctor.name.replace(/^Dr\.\s*/, "").split(" ")[0];
+              const specialty = doctor.name.includes("Nikhil") ? "Conservative Dentistry" : "Dentistry";
 
-        <div className="grid grid-cols-1 gap-8 xl:gap-10">
-          {doctors.map((doctor) => {
-            const bioParagraphs = doctor.bio
-              .trim()
-              .split(/\n+/)
-              .map((paragraph) => paragraph.trim())
-              .filter(Boolean);
-            const bioPreview = bioParagraphs.slice(0, 2).join(" ");
-
-            return (
-              <article
-                key={doctor.name}
-                className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)] transition-all duration-300 text-left"
-              >
-                <div className="h-1.5 bg-gradient-to-r from-logo-blue-500 via-logo-orange-500 to-logo-blue-500"></div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr]">
-                  <div className="relative bg-[#fbfaf7] p-5 sm:p-6 lg:p-7">
-                    <div className={`overflow-hidden rounded-[1.75rem] aspect-[4/5] shadow-lg ring-1 ring-black/5 ${doctor.mediaWrapperClassName ?? "bg-[#f8efe1]"}`}>
+              return (
+                <article
+                  key={doctor.name}
+                  className={`rounded-[1.5rem] border border-[#ead8c2] bg-[#f8f2e9] overflow-hidden ${isReversed ? "md:grid md:grid-cols-[minmax(0,1fr)_220px]" : "md:grid md:grid-cols-[220px_minmax(0,1fr)]"}`}
+                >
+                  <div className={`relative p-3 sm:p-3.5 md:p-3.5 ${isReversed ? "md:order-2" : ""}`}>
+                    <div className={`relative h-[200px] w-[200px] overflow-hidden rounded-[1.25rem] bg-[#f0ece7] ${doctor.mediaWrapperClassName ?? ""} ${isReversed ? "md:ml-auto" : ""}`}>
                       <img
                         src={doctor.image}
                         alt={doctor.name}
-                        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        className="h-full w-full object-cover object-center"
                       />
                     </div>
 
-                    <div className="mt-4 rounded-[1.5rem] border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="inline-flex items-center rounded-full bg-logo-orange-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-logo-orange-700">
-                          {doctor.experience}
-                        </span>
-                        <span className="inline-flex items-center rounded-full bg-logo-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-logo-blue-700">
-                          Clinical Lead
-                        </span>
+                    <div className="absolute left-3 top-3 rounded-xl bg-white px-2 py-1.5 shadow-[0_8px_20px_rgba(68,40,20,0.08)]">
+                      <div className="flex items-center gap-1.5">
+                        <div className="grid h-7 w-7 place-items-center rounded-full bg-logo-blue-600 text-white">
+                          <Star className="h-2.5 w-2.5 fill-current" />
+                        </div>
+                        <div>
+                          <p className="text-[7px] uppercase tracking-[0.18em] text-logo-blue-500">Rating</p>
+                          <p className="text-[11px] font-medium text-logo-blue-700">4.9 / 5</p>
+                        </div>
                       </div>
-                      <h3 className="mt-4 font-serif text-3xl leading-tight font-bold text-logo-auburn-500">
-                        {doctor.name}
-                      </h3>
-                      <p className="mt-2 text-sm font-semibold text-slate-500">
-                        {doctor.designation}
-                      </p>
+                    </div>
+
+                    <div className="absolute bottom-3 right-3 rounded-xl bg-white px-2 py-1.5 shadow-[0_8px_20px_rgba(68,40,20,0.08)]">
+                      <div className="flex items-center gap-1.5">
+                        <div className="grid h-7 w-7 place-items-center rounded-full bg-logo-orange-600 text-white">
+                          <Star className="h-2.5 w-2.5 fill-current" />
+                        </div>
+                        <div>
+                          <p className="text-[7px] uppercase tracking-[0.18em] text-logo-orange-500">Specialty</p>
+                          <p className="text-[11px] font-medium text-logo-blue-700">{specialty}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-6 sm:p-8 lg:p-10">
-                    <div className="flex flex-wrap items-center gap-3 pb-5 border-b border-slate-100">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-logo-orange-200 bg-logo-orange-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-logo-orange-700">
-                        <BadgeCheck className="w-3.5 h-3.5" />
-                        Board-Supported
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-logo-blue-100 bg-logo-blue-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-logo-blue-700">
-                        {doctor.education.length} Credentials
-                      </span>
-                    </div>
+                  <div className={`px-4 pb-4 pt-2 sm:px-5 sm:pb-5 sm:pt-3 md:px-5 md:py-5 lg:px-6 ${isReversed ? "md:order-1" : ""}`}>
+                    <div className="max-w-3xl space-y-3">
+                      <div className="space-y-1.5">
+                        <span className="block text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-logo-orange-500">
+                          {index === 0 ? "01 - DENTAL CARE - ROOT CANAL - ENDODONTICS" : "02 - DENTAL CARE - SMILE MAKEOVER - ENDODONTICS"}
+                        </span>
+                        <h3 className="font-serif text-xl sm:text-[2rem] lg:text-[2.2rem] font-normal tracking-tight text-logo-blue-700 leading-[1.02]">
+                          {doctor.name}
+                        </h3>
+                        <p className="text-[8px] sm:text-[9px] font-semibold uppercase tracking-[0.2em] text-logo-orange-600">
+                          {index === 0 ? "Founder & Chief Endodontist" : "Dentist"}
+                        </p>
+                        <p className="text-[10px] sm:text-[11px] leading-5 text-slate-600 max-w-2xl">
+                          {bioPreview}
+                        </p>
+                      </div>
 
-                    <div className="grid gap-8 xl:grid-cols-[1.15fr_0.85fr] xl:items-start">
-                      <div className="space-y-6">
-                        <div className="space-y-3">
-                          <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
-                            Professional Summary
-                          </h4>
-                          <p className="max-w-3xl text-sm sm:text-base leading-8 text-slate-600">
-                            {bioPreview}
-                          </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="rounded-2xl border border-[#e5cfa9] bg-[#fbf7f0] px-3 py-2">
+                          <p className="text-base font-normal text-logo-blue-700">{doctor.experience.replace(" Years", "")} yrs</p>
+                          <p className="mt-1 text-[7px] uppercase tracking-[0.16em] text-logo-orange-500 font-bold">Practising</p>
                         </div>
+                        <div className="rounded-2xl border border-[#e5cfa9] bg-[#fbf7f0] px-3 py-2">
+                          <p className="text-base font-normal text-logo-blue-700">{index === 0 ? "9k+" : "6k+"}</p>
+                          <p className="mt-1 text-[7px] uppercase tracking-[0.16em] text-logo-orange-500 font-bold">Patients Seen</p>
+                        </div>
+                        <div className="rounded-2xl border border-[#e5cfa9] bg-[#fbf7f0] px-3 py-2">
+                          <p className="text-sm font-normal text-logo-blue-700 leading-none">{index === 0 ? "Dent" : "Dent"}</p>
+                          <p className="mt-1 text-[7px] uppercase tracking-[0.16em] text-logo-orange-500 font-bold">{index === 0 ? "Conservative Dentistry" : "Dentistry"}</p>
+                        </div>
+                      </div>
 
+                      <div className="flex flex-col sm:flex-row gap-2.5 pt-0">
                         <Link
                           to="/contact"
-                          className="inline-flex w-full sm:w-auto min-w-[240px] items-center justify-center rounded-xl bg-logo-orange-500 px-6 py-3 text-xs font-extrabold text-white shadow-md transition-colors hover:bg-logo-orange-600"
+                          className="inline-flex items-center justify-center rounded-full bg-logo-blue-700 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-md transition-colors hover:bg-logo-blue-600"
                         >
-                          Book Consultation
+                          View profile <ArrowRight className="ml-2 h-3 w-3" />
                         </Link>
-                      </div>
-
-                      <div className="space-y-6 rounded-[1.5rem] border border-slate-100 bg-slate-50/70 p-5 sm:p-6">
-                        <div className="space-y-3">
-                          <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
-                            Education
-                          </h4>
-                          <ul className="space-y-4">
-                            {doctor.education.slice(0, 2).map((item) => (
-                              <li key={item} className="flex gap-3 text-sm leading-7 text-slate-600">
-                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-blue-500" />
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {(doctor.achievements?.length || doctor.memberships?.length) ? (
-                          <div className="space-y-3">
-                            <h4 className="text-[10px] font-bold uppercase tracking-[0.26em] text-logo-orange-600 font-mono">
-                              Key Highlights
-                            </h4>
-                            <div className="flex flex-wrap gap-2">
-                              {(doctor.achievements?.slice(0, 2) ?? []).map((item) => (
-                                <span
-                                  key={item}
-                                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600"
-                                >
-                                  {item}
-                                </span>
-                              ))}
-                              {(doctor.memberships?.slice(0, 2) ?? []).map((item) => (
-                                <span
-                                  key={item}
-                                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600"
-                                >
-                                  {item}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        ) : null}
+                        <Link
+                          to="/contact"
+                          className="inline-flex items-center justify-center rounded-full border border-logo-orange-600 bg-transparent px-4 py-2 text-[11px] sm:text-xs font-medium text-logo-orange-600 transition-colors hover:bg-logo-orange-600 hover:text-white"
+                        >
+                          Book with {firstName}
+                        </Link>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="bg-logo-blue-50/30 border-y border-logo-blue-100 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-logo-orange-600 font-mono">Our Standard of Practice</span>
-            <h2 className="font-serif text-3xl font-bold text-logo-auburn-500 leading-tight">
-              The Four Cornerstones of Clean Clinical Care
-            </h2>
-            <p className="text-slate-500 text-xs sm:text-sm">
-              We operate an modern luxury workspace environment adhering to global clinical parameters.
-            </p>
+                </article>
+              );
+            })}
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {values.map((v, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-logo-blue-100 p-6 sm:p-8 rounded-3xl shadow-xs text-left hover:scale-[1.01] hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-logo-blue-50 border border-logo-blue-100/50 text-logo-blue-500 flex items-center justify-center mb-5">
-                  <v.icon className="w-6 h-6 text-logo-blue-500" />
+        <section className="bg-logo-blue-50/30 border-y border-logo-blue-100 py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-logo-orange-600 font-mono">Our Standard of Practice</span>
+              <h2 className="font-serif text-xl font-bold text-logo-auburn-500 leading-tight">
+                The Four Cornerstones of Clean Clinical Care
+              </h2>
+              <p className="text-slate-500 text-xs sm:text-sm">
+                We operate an modern luxury workspace environment adhering to global clinical parameters.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {values.map((v, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border border-logo-blue-100 p-6 sm:p-8 rounded-3xl shadow-xs text-left hover:scale-[1.01] hover:shadow-md transition-all duration-300"
+                >
+                  <div className="lg:w-12 w-8 h-8 lg:h-12 rounded-2xl bg-logo-blue-50 border border-logo-blue-100/50 text-logo-blue-500 flex items-center justify-center mb-5">
+                    <v.icon className="w-4 h-4  text-logo-blue-500" />
+                  </div>
+                  <h3 className="font-serif text-xs md:text-xl font-bold text-logo-auburn-500 mb-2">
+                    {v.title}
+                  </h3>
+                  <p className="text-slate-600 text-[0.5rem] leading-relaxed">
+                    {v.desc}
+                  </p>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-logo-auburn-500 mb-2">
-                  {v.title}
-                </h3>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  {v.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="bg-slate-900 rounded-[2.5rem] p-8 sm:p-12 text-left relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-logo-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-logo-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="relative z-10 max-w-3xl space-y-6">
-            <span className="text-logo-orange-500 font-mono text-xs font-bold uppercase tracking-widest bg-logo-orange-500/10 px-3 py-1 rounded">
-              ISO Standards & Safety
-            </span>
-            <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
-              We Never Compromise on Safety, Disinfection, or Materials
-            </h3>
-            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
-              Every crown placed in our clinic carries raw materials imported directly from Germany (E-Max / IPS)
-              with solid warranty cards ranging from 10 to 25 years. We utilize lead-free shielding in digital X-Rays
-              and biological indicators to double-check sterilization states daily.
-            </p>
-
-            <div className="flex flex-wrap gap-4 pt-4 text-[10px] font-mono font-bold text-slate-300">
-              <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">100% LEAD SHEILD SAFETY</span>
-              <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">BIOLOGICAL CHECKS ENFORCED</span>
-              <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">IPS E-MAX OFFICIAL PARTNER</span>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-   <Footer/>
+        </section>
 
-   </>
+        <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="bg-slate-900 rounded-[2.5rem] p-8 sm:p-12 text-left relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-logo-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-logo-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="text-logo-orange-500 font-mono text-xs font-bold uppercase tracking-widest bg-logo-orange-500/10 px-3 py-1 rounded">
+                ISO Standards & Safety
+              </span>
+              <h3 className="font-serif text-sm sm:text-xl font-bold text-white leading-tight mt-2">
+                We Never Compromise on Safety, Disinfection, or Materials
+              </h3>
+              <p className="text-slate-200 text-[0.7rem] sm:text-sm leading-relaxed">
+                Every crown placed in our clinic carries raw materials imported directly from Germany (E-Max / IPS)
+                with solid warranty cards ranging from 10 to 25 years. We utilize lead-free shielding in digital X-Rays
+                and biological indicators to double-check sterilization states daily.
+              </p>
+
+              <div className="flex flex-wrap gap-4 pt-4 text-[10px] font-mono font-bold text-slate-300">
+                <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">100% LEAD SHEILD SAFETY</span>
+                <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">BIOLOGICAL CHECKS ENFORCED</span>
+                <span className="bg-slate-800/80 px-3 py-1.5 rounded-md border border-slate-700">IPS E-MAX OFFICIAL PARTNER</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
   );
 }

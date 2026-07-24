@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   Phone,
   Mail,
@@ -7,10 +8,14 @@ import {
   ExternalLink,
   MessageSquareText,
 } from "lucide-react";
+
 import Logo from "./Logo";
 
+
 export default function Footer() {
+
   const currentYear = new Date().getFullYear();
+
 
   const servicesLinks = [
     {
@@ -35,6 +40,7 @@ export default function Footer() {
     },
   ];
 
+
   const quickLinks = [
     {
       label: "Home",
@@ -58,152 +64,426 @@ export default function Footer() {
     },
   ];
 
-  return (
-    <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
-      {/* Top Footer */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 text-left sm:px-6 md:grid-cols-2 md:py-16 lg:grid-cols-4">
-        {/* Brand */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <Logo size="sm" showText={true} variant="dark" />
-          </div>
 
-          <p className="text-xs leading-relaxed text-slate-400">
-            Leading advanced dental clinic delivering ISO-standard clinical
-            hygiene protocols, painless root canal treatments, dental implants,
-            smile makeovers, and invisible aligners in Noida.
+
+  return (
+
+    <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
+
+
+      {/* Main Footer */}
+
+      <div
+        className="
+        mx-auto
+        grid
+        max-w-7xl
+        grid-cols-2
+        gap-x-5
+        gap-y-8
+        px-5
+        py-8
+        sm:px-6
+        md:grid-cols-2
+        md:gap-10
+        md:py-16
+        lg:grid-cols-4
+        "
+      >
+
+
+
+        {/* Brand */}
+
+        <div className="space-y-3">
+
+          <Logo
+            size="sm"
+            showText={true}
+            variant="light"
+          />
+
+
+          <p
+            className="
+            max-w-[150px]
+            text-xs
+            leading-relaxed
+            text-slate-400
+            "
+          >
+            Advanced dental care with modern treatments,
+            painless procedures and personalized smile solutions
+            in Noida.
           </p>
+
+
 
           <a
             href="https://wa.me/919891073008?text=Hello!%20I'd%20like%20to%20book%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-logo-orange-500 px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-logo-orange-600 hover:shadow-lg"
+            className="
+            inline-flex
+            items-center
+            gap-1.5
+            rounded-lg
+            bg-logo-orange-500
+            px-3
+            py-2
+            text-xs
+            font-bold
+            text-white
+            hover:bg-logo-orange-600
+            "
           >
-            <MessageSquareText className="h-4 w-4" />
-            <span>WhatsApp Consultation</span>
+
+            <MessageSquareText className="h-3.5 w-3.5"/>
+
+            WhatsApp
+
           </a>
+
+
         </div>
+
+
+
+
 
         {/* Quick Links */}
+
         <div>
-          <h4 className="mb-4 border-b border-slate-800 pb-2 font-mono text-xs font-bold uppercase tracking-widest text-white">
-            Quick Navigation
+
+
+          <h4
+            className="
+            mb-3
+            border-b
+            border-slate-800
+            pb-2
+            text-xs
+            font-bold
+            uppercase
+            tracking-widest
+            text-white
+            "
+          >
+            Quick Links
           </h4>
 
-          <ul className="space-y-2">
-            {quickLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className="block py-1 text-xs font-medium text-slate-400 transition-all duration-200 hover:translate-x-1 hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+
+
+          <ul className="space-y-1">
+
+
+            {
+              quickLinks.map((link)=>(
+
+                <li key={link.path}>
+
+                  <Link
+                    to={link.path}
+                    className="
+                    block
+                    text-xs
+                    text-slate-400
+                    hover:text-white
+                    "
+                  >
+                    {link.label}
+                  </Link>
+
+                </li>
+
+              ))
+            }
+
+
           </ul>
+
+
         </div>
+
+
+
+
 
         {/* Services */}
+
         <div>
-          <h4 className="mb-4 border-b border-slate-800 pb-2 font-mono text-xs font-bold uppercase tracking-widest text-white">
-            Our Key Treatments
+
+
+          <h4
+            className="
+            mb-3
+            border-b
+            border-slate-800
+            pb-2
+            text-xs
+            font-bold
+            uppercase
+            tracking-widest
+            text-white
+            "
+          >
+            Treatments
           </h4>
 
-          <ul className="space-y-2">
-            {servicesLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className="block py-1 text-xs font-medium text-slate-400 transition-all duration-200 hover:translate-x-1 hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+
+
+          <ul className="space-y-1">
+
+
+            {
+              servicesLinks.map((link)=>(
+
+                <li key={link.path}>
+
+                  <Link
+                    to={link.path}
+                    className="
+                    block
+                    text-xs
+                    text-slate-400
+                    hover:text-white
+                    "
+                  >
+                    {link.label}
+                  </Link>
+
+                </li>
+
+              ))
+            }
+
+
           </ul>
+
+
         </div>
+
+
+
+
+
+
 
         {/* Contact */}
-        <div className="space-y-4 text-xs text-slate-400">
-          <h4 className="border-b border-slate-800 pb-2 font-mono text-xs font-bold uppercase tracking-widest text-white">
-            Contact Directory
+
+        <div>
+
+
+          <h4
+            className="
+            mb-3
+            border-b
+            border-slate-800
+            pb-2
+            text-xs
+            font-bold
+            uppercase
+            tracking-widest
+            text-white
+            "
+          >
+            Contact
           </h4>
 
-          <div className="flex items-start gap-2.5">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-logo-orange-500" />
-            <span>
-              H-42, Block H, Sector 53, Noida, Uttar Pradesh 201301
-            </span>
+
+
+          <div
+            className="
+            space-y-3
+            text-xs
+            text-slate-400
+            "
+          >
+
+
+            <div className="flex items-start gap-2">
+
+
+              <MapPin
+                className="
+                h-3.5
+                w-3.5
+                shrink-0
+                text-logo-orange-500
+                "
+              />
+
+
+              <span>
+                H-42, Block H,
+                Sector 53,
+                Noida
+              </span>
+
+
+            </div>
+
+
+
+
+            <div className="flex items-center gap-2">
+
+
+              <Phone
+                className="
+                h-3.5
+                w-3.5
+                text-logo-blue-500
+                "
+              />
+
+
+              <a
+                href="tel:+919891073008"
+                className="hover:text-white"
+              >
+                +91 98910 73008
+              </a>
+
+
+            </div>
+
+
+
+
+            <div className="flex items-center gap-2">
+
+
+              <Mail
+                className="
+                h-3.5
+                w-3.5
+                text-logo-blue-500
+                "
+              />
+
+
+              <a
+                href="mailto:info@demystifyingsmiles.com"
+                className="hover:text-white"
+              >
+                Email
+              </a>
+
+
+            </div>
+
+
           </div>
 
-          <div className="flex items-center gap-2.5">
-            <Phone className="h-4 w-4 shrink-0 text-logo-blue-500" />
-            <a
-              href="tel:+919891073008"
-              className="transition-colors hover:text-white"
-            >
-              +91 98910 73008
-            </a>
-          </div>
 
-          <div className="flex items-center gap-2.5">
-            <Mail className="h-4 w-4 shrink-0 text-logo-blue-500" />
-            <a
-              href="mailto:info@demystifyingsmiles.com"
-              className="transition-colors hover:text-white"
-            >
-              info@demystifyingsmiles.com
-            </a>
-          </div>
-
-          <div className="flex justify-between border-t border-slate-800 pt-2 font-mono text-[9px] font-bold uppercase tracking-wide text-slate-500">
-            <span>ISO 9001 REGISTERED</span>
-            <span>WHO HYGIENE PROTOCOL</span>
-          </div>
         </div>
+
+
+
       </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-slate-800 bg-slate-950 px-4 py-6">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center text-xs font-medium text-slate-500 md:flex-row">
-          <div>
-            © {currentYear} Demystifying Smiles Dental Clinic. All Rights
-            Reserved.
-          </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+
+
+
+
+      {/* Bottom Footer */}
+
+      <div
+        className="
+        border-t
+        border-slate-800
+        bg-slate-950
+        px-5
+        py-4
+        "
+      >
+
+
+        <div
+          className="
+          mx-auto
+          flex
+          max-w-7xl
+          flex-col
+          items-center
+          justify-between
+          gap-3
+          text-center
+          text-xs
+          text-slate-500
+          md:flex-row
+          "
+        >
+
+
+          <span>
+            © {currentYear} Demystifying Smiles Dental Clinic.
+          </span>
+
+
+
+          <div
+            className="
+            flex
+            items-center
+            gap-3
+            "
+          >
+
             <Link
               to="/privacy-policy"
-              className="transition-colors hover:text-slate-300"
+              className="hover:text-white"
             >
-              Privacy Policy
+              Privacy
             </Link>
 
+
             <span>•</span>
+
 
             <Link
               to="/terms"
-              className="transition-colors hover:text-slate-300"
+              className="hover:text-white"
             >
-              Terms of Care
+              Terms
             </Link>
 
+
             <span>•</span>
+
 
             <a
               href="https://maps.google.com/?q=Demystifying+Smiles+Sector+53+Noida"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 transition-colors hover:text-slate-300"
+              className="
+              flex
+              items-center
+              gap-1
+              hover:text-white
+              "
             >
-              <span>Find Clinic</span>
-              <ExternalLink className="h-3 w-3" />
+
+              Find Clinic
+
+              <ExternalLink className="h-3 w-3"/>
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </div>
+
+
     </footer>
+
   );
+
 }
