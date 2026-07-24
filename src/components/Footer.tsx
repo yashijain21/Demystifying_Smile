@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 import {
   Phone,
-  Mail,
   MapPin,
   ExternalLink,
   MessageSquareText,
@@ -57,6 +57,24 @@ export default function Footer() {
     {
       label: "Book Appointment",
       path: "/contact",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/p/Demystifying-Smiles-Dr-Nikhil-and-Dr-Namratas-Smile-World-100063998984138/",
+      icon: FaFacebookF,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/dr-nikhil-bahuguna-392339114?originalSubdomain=in",
+      icon: FaLinkedinIn,
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/demystifying_smiles/",
+      icon: FaInstagram,
     },
   ];
 
@@ -341,32 +359,39 @@ export default function Footer() {
                 +91 98910 73008
               </a>
 
-
             </div>
 
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
 
-
-
-            <div className="flex items-center gap-2">
-
-
-              <Mail
-                className="
-                h-3.5
-                w-3.5
-                text-logo-blue-500
-                "
-              />
-
-
-              <a
-                href="mailto:info@demystifyingsmiles.com"
-                className="hover:text-white"
-              >
-                Email
-              </a>
-
-
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="
+                      inline-flex
+                      h-9
+                      w-9
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-slate-700
+                      bg-slate-950
+                      text-slate-300
+                      transition
+                      hover:border-white
+                      hover:text-white
+                    "
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
 
 

@@ -187,12 +187,7 @@ export default function AboutPage() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-2.5 pt-0">
-                        <Link
-                          to="/contact"
-                          className="inline-flex items-center justify-center rounded-full bg-logo-blue-700 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-md transition-colors hover:bg-logo-blue-600"
-                        >
-                          View profile <ArrowRight className="ml-2 h-3 w-3" />
-                        </Link>
+                       
                         <Link
                           to="/contact"
                           className="inline-flex items-center justify-center rounded-full border border-logo-orange-600 bg-transparent px-4 py-2 text-[11px] sm:text-xs font-medium text-logo-orange-600 transition-colors hover:bg-logo-orange-600 hover:text-white"
